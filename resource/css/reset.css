@@ -1,0 +1,41 @@
+/*!
+ * Module 4 - Code Quiz
+ * Copyright 2023 
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Carleton Bootcamp - https://courses.bootcampspot.com/courses/4027
+ * CARL-VIRT-FSF-PT-07-2023-U-LOLC-MTTH
+ * 
+ * Author: Gustavo Miller 
+ * Date: August 29th, 2023
+ * File: /assets/css/reset.css
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+input, select, option, optgroup, textarea, button,
+pre, code {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}

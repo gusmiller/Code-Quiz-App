@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Gustavo Miller" />
+  <title>Code Quiz</title>
+
+  <!-- <link rel="stylesheet" href="/resource/css/reset.css"> -->
+  <link rel="stylesheet" href="/resource/css/styles.css">
+</head><!-- Header declarations and stylesheets among others -->
+
 <body>
-    
+  <div class="header-options">
+    <div><a href="">View Highscores</a></div>
+    <div id="timelog" hidden>Time: <span id="timerview">0</span></div>
+  </div>
+
+  <main class="wrapper">
+    <header>
+      <h1>Week #4 - Code Quiz Challenge</h1>
+    </header>
+
+    <article class="card">
+      <section class="card-body">
+
+        <!-- Introduction section -->
+        <aside id="intro" hidden>
+          <p><strong>Welcome to the IT Quiz</strong>. You will be presented with <strong>5 questions</strong>, the goal
+            is to respond them all correct, before the counter reachers cero. Each questions rewards you 20 points when correct and 10
+            seconds when wrong.</p>
+          <p>Good Luck! and no cheating!</p>
+        </aside><!-- End of Introduction section -->
+
+        <!-- Questions section -->
+        <aside id="questionArea" hidden>
+          <p id="questionDescription"></p>
+          <ol>
+            <li><button id="q1" class="response"></button></li>
+            <li><button id="q2" class="response"></button></li>
+            <li><button id="q3" class="response"></button></li>
+            <li><button id="q4" class="response"></button></li>
+          </ol>
+          <div id="correctOne"></div>
+        </aside><!-- End of Questions section -->
+
+        <!-- Quiz Invalid Section -->
+        <aside id="quizInvalid" hidden>
+          <p id="questionDescription">Aww! you ran out of time!<br /> To try again refresh your browser and try again.
+          </p>
+        </aside><!-- End of Invalid Section -->
+
+        <!-- Register Results Section -->
+        <aside id="quizSuccess" hidden>
+
+          <h3 class="card-footer" id="questionDescription">You have completed the quiz on time!.</h3>
+          <p>Your score is: <span id="totalScore"></span></p>
+          <div class="success-entry">
+            <form action="post" id="gradesubmit">
+              <label class="rm" for="first-name">Enter your Initials</label>
+              <input id="scoreInitials" type="text" class="form-input rm" name="first-name" placeholder="Enter first name" />
+              <button id="submitScore">Submit</button>
+            </form>
+          </div>
+
+        </aside><!-- End of Invalid Section -->
+
+      </section>
+
+      <section class="card-footer">
+        <button id="generate" class="btn">Start Quiz!</button>
+        <div id="responseDisplay" hidden>
+          <p id="resultsDisplay"></p>
+        </div>
+      </section>
+
+    </article>
+
+    <footer class="version">
+      <p>Developed by Gustavo Miller - 2023 v001</p>
+    </footer>
+  </main>
+  <script src="/resource/scripts/script.js"></script>
 </body>
+
 </html>
