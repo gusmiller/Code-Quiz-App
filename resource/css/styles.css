@@ -1,0 +1,175 @@
+/*!
+ * Module 4 - Code Quiz
+ * Copyright 2023 
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Carleton Bootcamp - https://courses.bootcampspot.com/courses/4027
+ * CARL-VIRT-FSF-PT-07-2023-U-LOLC-MTTH
+ * 
+ * Author: Gustavo Miller 
+ * Date: August 29th, 2023
+ * File: /assets/css/styles.css
+ *
+ * Description: Contains all styles for application
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9fbfd;
+}
+
+.wrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+}
+
+ol {
+  padding-left: 40%;
+}
+
+li {
+  margin: 2.5px
+}
+
+li button {
+  width: 150px;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 40px;
+}
+
+.card-header::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
+}
+
+.card-body {
+  min-height: 100px;
+}
+
+.card-body p {
+  text-align: center;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+
+.btn {
+  border: none;
+  background-color: hsl(360, 91%, 36%);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+button[disabled] {
+  cursor: default;
+  background: #c0c7cf;
+}
+
+.float-right {
+  float: right;
+}
+
+.version {
+  text-align: center;
+  margin-top: 5px;
+  color: rgb(190, 188, 188);
+}
+
+.version p {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.success-entry {
+  margin-left: 25%;
+  display: flex;
+  flex-direction: row;
+}
+
+.rm {
+  margin-right: 10px;
+}
+
+.textcenter {
+  text-align: center;
+}
+/* 
+.form-input {
+  text-transform: uppercase;
+} */
+
+.header-options {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hide-element {
+  display: none !important;
+}
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
