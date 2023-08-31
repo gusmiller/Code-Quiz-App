@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./Assets/img/carleton-u-logo.jpg" height="250">
+    <img src="./resource/images/carleton-u-logo.jpg" height="250">
 </p>
 
 <p align="center">
