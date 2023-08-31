@@ -54,6 +54,14 @@ li {
 
 li button {
   width: 150px;
+  background-color: hsl(210, 61%, 81%);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: hsl(187, 57%, 59%);
+  border: 2px solid blue;
 }
 
 .card {

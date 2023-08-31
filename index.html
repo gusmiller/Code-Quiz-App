@@ -7,8 +7,8 @@
   <meta name="author" content="Gustavo Miller" />
   <title>Code Quiz</title>
 
-  <!-- <link rel="stylesheet" href="/resource/css/reset.css"> -->
-  <link rel="stylesheet" href="/resource/css/styles.css">
+  <!-- <link rel="stylesheet" href="./resource/css/reset.css"> -->
+  <link rel="stylesheet" href="./resource/css/styles.css">
 </head><!-- Header declarations and stylesheets among others -->
 
 <body>
@@ -35,7 +35,7 @@
 
         <!-- Questions section -->
         <aside id="questionArea" hidden>
-          <p id="questionDescription"></p>
+          <p class="questionDescription"></p>
           <ol>
             <li><button id="q1" class="response"></button></li>
             <li><button id="q2" class="response"></button></li>
@@ -47,14 +47,14 @@
 
         <!-- Quiz Invalid Section -->
         <aside id="quizInvalid" hidden>
-          <p id="questionDescription">Aww! you ran out of time!<br /> To try again refresh your browser and try again.
+          <p class="questionDescription">Aww! you ran out of time!<br /> To try again refresh your browser and try again.
           </p>
         </aside><!-- End of Invalid Section -->
 
         <!-- Register Results Section -->
         <aside id="quizSuccess" hidden>
 
-          <h3 class="card-footer" id="questionDescription">You have completed the quiz on time!.</h3>
+          <h3 class="card-footer" class="questionDescription">You have completed the quiz on time!.</h3>
           <p>Your score is: <span id="totalScore"></span></p>
           <div class="success-entry">
             <form action="post" id="gradesubmit">
@@ -81,7 +81,7 @@
       <p>Developed by Gustavo Miller - 2023 v001</p>
     </footer>
   </main>
-  <script src="/resource/scripts/script.js"></script>
+  <script src="./resource/scripts/script.js"></script>
 </body>
 
 </html>

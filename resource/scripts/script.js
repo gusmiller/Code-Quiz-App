@@ -25,7 +25,7 @@ var totalScore = 0; // Total Score handler
 
 // Questions area; area, question description, and respective options
 var questionArea = document.querySelector("#questionArea");
-var questionDes = document.querySelector("#questionDescription");
+var questionDes = document.querySelector(".questionDescription");
 var questionQ1 = document.querySelector("#q1");
 var questionQ2 = document.querySelector("#q2");
 var questionQ3 = document.querySelector("#q3");
@@ -35,7 +35,7 @@ var displayResponse = document.querySelector("#correctOne"); // Retrieve correct
 var responseDisplay = document.querySelector("#responseDisplay"); // Selector - display whether the response is correct or not
 const elementsButtons = document.querySelectorAll(".response"); // Select ALL quiz buttons
 
-var counter = 0;
+var counter = 0; // Questions counter
 var correctResponse = "";
 var sec = 60;
 
@@ -202,6 +202,7 @@ function Init() {
   quizSuccess.hidden = true; // hide the success area
 
   testCompleted = false; // Process initialized - not completed as default
+  counter = 0; // Initialize the questions counter
 
   // Retrieve data from local storage and test if there is data; it pushes into array
   // in case scores exist.
