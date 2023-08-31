@@ -19,7 +19,11 @@ var testCompleted = false; // Indicates quiz has been completed
 var timeRunOut = false; // Indicates time has ran out
 
 var score = document.querySelector("#totalScore");
-var submitScore = document.querySelector("#submitScore");
+var noScore = document.querySelector("#ohNoScore");
+
+var submitScore = document.querySelector("#submitScoreButton"); // Submit score button
+var gradeSubmitForm = document.querySelector("#gradesubmitForm"); // Scores Submit Form
+var submitRestart = document.querySelector(".submitRestart");
 var scoreInitials = document.querySelector("#scoreInitials");
 var scoresControl = []; // Declare empty array - this will hold the grades
 var totalScore = 0; // Total Score handler
@@ -123,6 +127,9 @@ submitScore.addEventListener("click", function (event) {
 
   // Window: localStorage property - data has no expiration time
   localStorage.setItem("scores", JSON.stringify(scoresControl));
+
+  // Return to the main form
+  window.location.href = "index.html";
 })
 
 /**
@@ -143,7 +150,7 @@ elementsButtons.forEach(function (e) {
       resultsDisplay.innerHTML = "Sorry wrong answer!"; // Nah! wrong answer
       resultsDisplay.setAttribute("style", "color:red;"); // Change style to warning
       sec = sec - 10; //Penalize user with 10 seconds
-      if (sec<0){ sec=0; }
+      if (sec < 0) { sec = 0; }
     } else {
       totalScore = totalScore + 20;
       resultsDisplay.innerHTML = "That is correct!"; // Nice! right answer
@@ -156,8 +163,8 @@ elementsButtons.forEach(function (e) {
       testCompleted = true; // Test completed
     }
 
-    // Time has ran out we need to exit
-    if(timeRunOut = true){ return false; }
+    // Time has ran out we need to exit. We do a tripple equal to ensure true/false
+    if (timeRunOut === true) { return false; }
     setTimeout(function () { resultsDisplay.innerHTML = ""; startQuiz(); }, 500);
 
   });
@@ -176,8 +183,7 @@ function timer() {
 
     // Validate whether the process has been terminated
     if (testCompleted == true) {
-      questionArea.hidden = true;
-      quizSuccess.hidden = false;
+      ProcessCompletedQuiz(totalScore) // Validate Completion special conditions
       clearInterval(timer);
       return;
     }
@@ -196,6 +202,27 @@ function timer() {
 }
 
 /**
+ * This function will process the completion of the quiz. The user may have score CERO (0) which
+ * force the process not to allow registration of cero scores. When condition is cero then we 
+ * offer the option to restart the process
+ * @param {*} value - Total Score
+ */
+function ProcessCompletedQuiz(value) {
+
+  // Process has been completed - no more questions
+  questionArea.hidden = true; 
+
+  // Reveal Quiz success but do not allow registration of Cero (0)
+  quizSuccess.classList.remove("hide-element");
+
+  if (value == 0) {
+    gradeSubmitForm.classList.add("hide-element"); // Hide the score form
+    submitRestart.classList.remove("hide-element"); // Reveal 
+    noScore.hidden = false;
+  } 
+}
+
+/**
  * This function triggers once, when form is loaded. It makes sure the 
  * correct elements are being displayed. It also initializes the variables that will 
  * control the flow.
@@ -211,13 +238,13 @@ function Init() {
 
   // Retrieve data from local storage and test if there is data; it pushes into array
   // in case scores exist.
-  var scores = JSON.parse(localStorage.getItem("scores")); 
+  var scores = JSON.parse(localStorage.getItem("scores"));
   if (scores !== null) {
     scoresControl.push(scores);
   }
 
   // Evaluate the Local Storage object and display number of items. Using ternary conditional
-  viewScoresCount.textContent = "View Highscores (" + ((scores !== null) ? scores.length : "0") + ")" ;
+  viewScoresCount.textContent = "View Highscores (" + ((scores !== null) ? scores.length : "0") + ")";
 }
 
 Init();

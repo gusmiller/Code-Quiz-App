@@ -48,24 +48,36 @@
 
         <!-- Quiz Invalid Section -->
         <aside id="quizInvalid" hidden>
-          <p class="questionDescription">Aww! you ran out of time!<br /> It's ok.<br/> To try again refresh your browser and try again.</p>
+          <p class="questionDescription">Aww! you ran out of time!<br /> It's ok.<br /> To try again refresh your
+            browser and try again.</p>
           <div class="flexbox-center">
             <img src="./resource/images/sadface.gif" height="150" alt="Sad face of child about to cry">
           </div>
         </aside><!-- End of Invalid Section -->
 
         <!-- Register Results Section -->
-        <aside id="quizSuccess" hidden>
+        <aside id="quizSuccess" class="hide-element">
 
           <h3 class="card-footer" class="questionDescription">You have completed the quiz on time!.</h3>
-          <p>Your score is: <span id="totalScore"></span></p>
-          <div class="success-entry">
-            <form action="post" id="gradesubmit">
+          <p>Your score is: <span id="totalScore"></span><br /><span id="ohNoScore" class="text-warning" hidden><br/>Oh no!
+              It
+              looks like to failed the quiz. There is no score!<br/>No problem you can try again by refreshing the browser
+              or clicking on the Start Quiz again</span></p>
+
+          <section class="success-entry">
+
+            <form action="post" id="gradesubmitForm">
+
               <label class="rm" for="first-name">Enter your Initials</label>
               <input id="scoreInitials" type="text" class="form-input rm" name="first-name"
                 placeholder="Enter first name" />
-              <button id="submitScore">Submit</button>
+              <button type="button" id="submitScoreButton">Submit</button>
+
             </form>
+
+          </section>
+          <div class="submitRestart hide-element">
+            <button type="button" class="btn redbutton" id="restartQuiz"><a href="index.html">Restart</a></button>
           </div>
 
         </aside><!-- End of Invalid Section -->

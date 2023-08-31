@@ -33,6 +33,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .wrapper {
@@ -170,6 +171,10 @@ li button:hover {
   margin-bottom: 30px;
 }
 
+.mt {
+  margin-top: 15px;
+}
+
 .textcenter {
   text-align: center;
 }
@@ -186,6 +191,11 @@ li button:hover {
   display: none !important;
 }
 
+.text-warning {
+  color: red !important;
+  font-weight: 400;
+}
+
 .scoresarea {
   display: flex;
   flex-direction: column;
@@ -198,6 +208,21 @@ li button:hover {
   background-color: rgb(188, 218, 203);
   text-align: left;
   padding: 5px 0 5px 45px !important;
+}
+
+#quizSuccess {
+  display: flex;
+  flex-direction: column;
+}
+
+#quizSuccess p {
+  margin-top: 0 !important;
+}
+
+.submitRestart {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .flexbox-center {
