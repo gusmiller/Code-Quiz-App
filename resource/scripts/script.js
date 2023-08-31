@@ -15,13 +15,15 @@ var quizSuccess = document.querySelector("#quizSuccess");
 
 // Time log selector - display the timer here
 var timelog = document.querySelector("#timelog");
-var testCompleted = false;
+var testCompleted = false; // Indicates quiz has been completed
+var timeRunOut = false; // Indicates time has ran out
 
 var score = document.querySelector("#totalScore");
 var submitScore = document.querySelector("#submitScore");
 var scoreInitials = document.querySelector("#scoreInitials");
 var scoresControl = []; // Declare empty array - this will hold the grades
 var totalScore = 0; // Total Score handler
+var viewScoresCount = document.querySelector("#viewscorescount"); // Anchor to load scores page
 
 // Questions area; area, question description, and respective options
 var questionArea = document.querySelector("#questionArea");
@@ -42,19 +44,19 @@ var sec = 60;
 /** Questions array. It contains all the questions we are showing to the user */
 var questionsArray = [
   {
-    question: "Which one is the first search engine in internet",
+    question: "The internet has been around for more time that you think. Search engines are a very important feature of any browser.<br/> <strong>Which one was the first search engine in internet</strong>",
     quiza: "Google", quizb: "Archie", quizc: "Altavista", quizd: "WAIS", answer: "Archie"
   }, {
-    question: "Number of bit used by the IPv6 address",
+    question: "An Internet Protocol Version 6 address (IPv6 address) is a numeric label that is used to identify and locate a network interface of a computer<br/><strong>Number of bit used by the IPv6 address</strong>",
     quiza: "32 bit", quizb: "64 bit", quizc: "128 bit", quizd: "256 bit", answer: "128 bit"
   }, {
-    question: "Which one is the first web browser invented in 1990",
+    question: "A web browser is an application for accessing websites. The purpose of a web browser is to fetch content from the World Wide Web or from local storage and display it on a user's device<br/><strong>Which one is the first web browser invented in 1990</strong>",
     quiza: "Internet Explorer", quizb: "Mosaic", quizc: "Mozilla", quizd: "Nexus", answer: "Nexus"
   }, {
-    question: "Which of the following programming language is used to create programs like applets?",
+    question: "A programming language is a system of notation for writing computer programs.[1] Most programming languages are text-based formal languages, but they may also be graphical.<br/><strong>Which of the following programming language is used to create programs like applets?</strong>",
     quiza: "COBOL", quizb: "C Language", quizc: "Java", quizd: "BASIC", answer: "Java"
   }, {
-    question: "First computer virus is known as",
+    question: "A computer virus is a type of malware that, when executed, replicates itself by modifying other computer programs and inserting its own malicious code into those programs.<br/><strong>First computer virus is known as</strong>",
     quiza: "Rabbit", quizb: "Creeper Virus", quizc: "Elk Cloner", quizd: "SCA Virus", answer: "Creeper Virus"
   }
 ];
@@ -112,10 +114,10 @@ generateBtn.addEventListener("click", function () {
 submitScore.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent a post - prevent form to be rendered
 
-  var scoreArray = [{
+  var scoreArray = {
     initials: scoreInitials.value,
     score: totalScore
-  }];
+  };
 
   scoresControl.push(scoreArray); // Add new results to the local storage
 
@@ -141,6 +143,7 @@ elementsButtons.forEach(function (e) {
       resultsDisplay.innerHTML = "Sorry wrong answer!"; // Nah! wrong answer
       resultsDisplay.setAttribute("style", "color:red;"); // Change style to warning
       sec = sec - 10; //Penalize user with 10 seconds
+      if (sec<0){ sec=0; }
     } else {
       totalScore = totalScore + 20;
       resultsDisplay.innerHTML = "That is correct!"; // Nice! right answer
@@ -153,6 +156,8 @@ elementsButtons.forEach(function (e) {
       testCompleted = true; // Test completed
     }
 
+    // Time has ran out we need to exit
+    if(timeRunOut = true){ return false; }
     setTimeout(function () { resultsDisplay.innerHTML = ""; startQuiz(); }, 500);
 
   });
@@ -181,11 +186,11 @@ function timer() {
     // this is true then we need to stop the counter. Fail the process and display failed message
     if (sec <= 0) {
       questionArea.hidden = true;
+      responseDisplay.hidden = true;
       quizInvalid.hidden = false;
+      timeRunOut = true; // Indicates time has ran out
 
-      testCompleted == true;
       clearInterval(timer);
-      return;
     }
   }, 1000);
 }
@@ -210,6 +215,9 @@ function Init() {
   if (scores !== null) {
     scoresControl.push(scores);
   }
+
+  // Evaluate the Local Storage object and display number of items. Using ternary conditional
+  viewScoresCount.textContent = "View Highscores (" + ((scores !== null) ? scores.length : "0") + ")" ;
 }
 
 Init();

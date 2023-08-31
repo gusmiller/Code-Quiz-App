@@ -13,7 +13,7 @@
 
 <body>
   <div class="header-options">
-    <div><a href="">View Highscores</a></div>
+    <div><a id="viewscorescount" href="scores.html">View Highscores</a></div>
     <div id="timelog" hidden>Time: <span id="timerview">0</span></div>
   </div>
 
@@ -28,7 +28,8 @@
         <!-- Introduction section -->
         <aside id="intro" hidden>
           <p><strong>Welcome to the IT Quiz</strong>. You will be presented with <strong>5 questions</strong>, the goal
-            is to respond them all correct, before the counter reachers cero. Each questions rewards you 20 points when correct and 10
+            is to respond them all correct, before the counter reachers cero. Each questions rewards you 20 points when
+            correct and 10
             seconds when wrong.</p>
           <p>Good Luck! and no cheating!</p>
         </aside><!-- End of Introduction section -->
@@ -47,8 +48,10 @@
 
         <!-- Quiz Invalid Section -->
         <aside id="quizInvalid" hidden>
-          <p class="questionDescription">Aww! you ran out of time!<br /> To try again refresh your browser and try again.
-          </p>
+          <p class="questionDescription">Aww! you ran out of time!<br /> It's ok.<br/> To try again refresh your browser and try again.</p>
+          <div class="flexbox-center">
+            <img src="./resource/images/sadface.gif" height="150" alt="Sad face of child about to cry">
+          </div>
         </aside><!-- End of Invalid Section -->
 
         <!-- Register Results Section -->
@@ -59,7 +62,8 @@
           <div class="success-entry">
             <form action="post" id="gradesubmit">
               <label class="rm" for="first-name">Enter your Initials</label>
-              <input id="scoreInitials" type="text" class="form-input rm" name="first-name" placeholder="Enter first name" />
+              <input id="scoreInitials" type="text" class="form-input rm" name="first-name"
+                placeholder="Enter first name" />
               <button id="submitScore">Submit</button>
             </form>
           </div>
