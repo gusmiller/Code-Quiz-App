@@ -1,3 +1,6 @@
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+
 <p align="center">
     <img src="./resource/images/carleton-u-logo.jpg" height="250">
 </p>
@@ -11,6 +14,9 @@
         <img alt="JavaScript - Functions" src="https://img.shields.io/static/v1.svg?label=JavaScripts&message=arrays&color=yellow" /></a>
     <a href="" >
         <img alt="JavaScript - Prompts" src="https://img.shields.io/static/v1.svg?label=deployment&message=production&color=green" /></a>
+    <a href="https://www.linkedin.com/in/gustavo-miller-42188481/">
+        <img alt="LinkedIn Platforms" src="https://img.shields.io/static/v1.svg?label=linkedIn&message=linkedin&color=blue" />
+    </a>
 </p>
 <br/>
 
@@ -41,6 +47,7 @@ The Code Quiz application should welcome the user and offer the option to partic
     <li>A computer virus is a type of malware that, when executed, replicates itself by modifying other computer programs and inserting its own malicious code into those programs.<br/><strong>First computer virus is known as</strong>"</li>
 </ul>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Notes to consider
 The Code Quiz Game though it seems pretty simple, it was not. There was a lot of coding behind, plus there was a timer that ended the process, making it very difficult to handle
@@ -54,6 +61,8 @@ The Code Quiz Game though it seems pretty simple, it was not. There was a lot of
 > * Calculation of scores; in case it goes negative.
 >
 > * Option to restart process when Quiz is failed to be handled.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Error Handling
 There is no errr handling but there is a failed Quiz Message
