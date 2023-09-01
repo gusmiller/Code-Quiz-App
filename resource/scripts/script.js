@@ -25,7 +25,7 @@ var submitScore = document.querySelector("#submitScoreButton"); // Submit score 
 var gradeSubmitForm = document.querySelector("#gradesubmitForm"); // Scores Submit Form
 var submitRestart = document.querySelector(".submitRestart");
 var scoreInitials = document.querySelector("#scoreInitials");
-var scoresControl = []; // Declare empty array - this will hold the grades
+var scoresRegistry = []; // Declare empty array - this will hold the grades
 var totalScore = 0; // Total Score handler
 var viewScoresCount = document.querySelector("#viewscorescount"); // Anchor to load scores page
 
@@ -118,15 +118,16 @@ generateBtn.addEventListener("click", function () {
 submitScore.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent a post - prevent form to be rendered
 
-  var scoreArray = {
+  // Build score object 
+  var localScore = {
     initials: scoreInitials.value,
     score: totalScore
   };
 
-  scoresControl.push(scoreArray); // Add new results to the local storage
+  scoresRegistry.push(localScore); // Add new results to the local storage
 
   // Window: localStorage property - data has no expiration time
-  localStorage.setItem("scores", JSON.stringify(scoresControl));
+  localStorage.setItem("scores", JSON.stringify(scoresRegistry));
 
   // Return to the main form
   window.location.href = "index.html";
@@ -210,7 +211,7 @@ function timer() {
 function ProcessCompletedQuiz(value) {
 
   // Process has been completed - no more questions
-  questionArea.hidden = true; 
+  questionArea.hidden = true;
 
   // Reveal Quiz success but do not allow registration of Cero (0)
   quizSuccess.classList.remove("hide-element");
@@ -219,13 +220,13 @@ function ProcessCompletedQuiz(value) {
     gradeSubmitForm.classList.add("hide-element"); // Hide the score form
     submitRestart.classList.remove("hide-element"); // Reveal 
     noScore.hidden = false;
-  } 
+  }
 }
 
 /**
  * This function triggers once, when form is loaded. It makes sure the 
  * correct elements are being displayed. It also initializes the variables that will 
- * control the flow.
+ * control the flow. In here we load the information we have in our Local Storage
  */
 function Init() {
   introSection.hidden = false; // Present the user the challenge
@@ -240,11 +241,19 @@ function Init() {
   // in case scores exist.
   var scores = JSON.parse(localStorage.getItem("scores"));
   if (scores !== null) {
-    scoresControl.push(scores);
+
+    // Validate whether we have a single item or an array of objects
+    if (Object.prototype.toString.call(scores) !== "[object Array]") {
+      scoresRegistry.push(scores); // Initialize the scores array
+    } else {
+      for (i = 0; i <= scores.length - 1; i++) {
+        scoresRegistry.push(scores[i]); // Add scores into array
+      }
+    }
   }
 
   // Evaluate the Local Storage object and display number of items. Using ternary conditional
-  viewScoresCount.textContent = "View Highscores (" + ((scores !== null) ? scores.length : "0") + ")";
+  viewScoresCount.textContent = "View Highscores (" + ((scoresRegistry !== null) ? scoresRegistry.length : "0") + ")";
 }
 
 Init();

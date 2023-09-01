@@ -33,7 +33,6 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 .wrapper {
@@ -142,10 +141,6 @@ li button:hover {
   color: hsl(0, 0%, 100%);
 }
 
-.float-right {
-  float: right;
-}
-
 .version {
   text-align: center;
   margin-top: 5px;
@@ -169,14 +164,6 @@ li button:hover {
 
 .mb {
   margin-bottom: 30px;
-}
-
-.mt {
-  margin-top: 15px;
-}
-
-.textcenter {
-  text-align: center;
 }
 
 .header-options {
@@ -207,7 +194,7 @@ li button:hover {
   width: 50%;
   background-color: rgb(188, 218, 203);
   text-align: left;
-  padding: 5px 0 5px 45px !important;
+  padding: 1px 0 2px 45px !important;
 }
 
 #quizSuccess {
@@ -225,6 +212,13 @@ li button:hover {
   margin-top: 10px;
 }
 
+.submitRestart a {
+  color: white;
+}
+
+/*----------------------------------------------------------------------
+    Create a flex box
+----------------------------------------------------------------------*/
 .flexbox-center {
   display: flex;
   flex-direction: column;

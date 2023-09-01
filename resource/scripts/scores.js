@@ -28,15 +28,23 @@ function Init() {
     // and display on screen
     var scores = JSON.parse(localStorage.getItem("scores"));
 
+    // Validate there is something
     if (scores !== null) {
 
-        for (i = 0; i <= scores.length - 1; i++) {
-            var scoreTag = document.createElement("div");
-            scoreTag.textContent = i + 1 + ". " + scores[i].initials + " Score " + scores[i].score
-
-            scoresArea.appendChild(scoreTag);
+        // Validate whether we have a single item or an array of objects
+        if (Object.prototype.toString.call(scores)==="[object Array]"){
+            for (i = 0; i <= scores.length - 1; i++) {
+                var scoreTag = document.createElement("div"); // Create new DIV
+                scoreTag.textContent = (i + 1) + ". " + scores[i].initials + " Score " + scores[i].score // Populate new element
+    
+                scoresArea.appendChild(scoreTag); // Inject Element to DOM
+            }
+        }else{
+            var scoreTag = document.createElement("div"); // Create new DIV
+            scoreTag.textContent = "1. " + scores.initials + " Score " + scores.score // Populate new element
+            scoresArea.appendChild(scoreTag); // Inject Element to DOM
         }
-
+        
     }else{
         noDataSection.classList.remove("hide-element");
         introSection.classList.add("hide-element")
