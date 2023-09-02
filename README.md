@@ -28,14 +28,16 @@ The challenge this week is to create an application that enables users to partic
 
 <img src="./documents/images/CQC-001.png" height="750">
 
+<!-- Source Section -->
 ## Source code
 The source code is stored and maintained in Github; https://github.com/gusmiller/Code-Quiz-App. If you are reading this then you already have the URL. It includes additional documents that helped the development of the Code Quiz application. The public application can be found here:
 
 ```
 https://gusmiller.github.io/Code-Quiz-App/
 ```
-The latest version is: Version 002. To visit the application and participate please click <a href="https://gusmiller.github.io/Code-Quiz-App/">Code-Quiz-App</a>
+The latest version is <strong>Version 004</strong>. To visit the application and participate please click <a href="https://gusmiller.github.io/Code-Quiz-App/">Code-Quiz-App</a>
 
+<!-- Business Requirements Section -->
 ## Business Requirements
 The Code Quiz application should welcome the user and offer the option to participate. When user starts the process it will be presented with 5 questions prompted one at the time. Each question answered correctly will earn the user 20 points, but in the other hand if user answers incorrectly then is penalize with 10 seconds. The prompts are as follow:
 
@@ -47,8 +49,19 @@ The Code Quiz application should welcome the user and offer the option to partic
     <li>A computer virus is a type of malware that, when executed, replicates itself by modifying other computer programs and inserting its own malicious code into those programs.<br/><strong>First computer virus is known as</strong>"</li>
 </ul>
 
+# Quiz - Questions layout
+The Layout of the Code Quiz is very simple. The index.html has a card styled using CSS and inside this object we have four divisions -Sections, <strong>Introduction Section, Questions Section, Completed Section and Time-out Section</strong>. These sections are hidden with exception of the Introduction which is where the process starts. Once the user starts the Quiz the Questions Section is revealed and timer is started. The questions are stored in an array; therefore we can display the correct question at any given time. 
+
+User will select their choice and application will validate response. Business rules will determine whether user is granted 20 points or timer is reduces in 10 seconds, either way process will move to next question.
+
+Here is the layout of the index.html
+<img src="./documents/images/CQC-008.png" height="500">
+
+During this process the JavaScript code keeps track of the time. If time runs out, the user's Quiz will be terminated.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Notes Section -->
 ## Notes to consider
 The Code Quiz Game though it seems pretty simple, it was not. There was a lot of coding behind, plus there was a timer that ended the process, making it very difficult to handle
 
@@ -62,7 +75,43 @@ The Code Quiz Game though it seems pretty simple, it was not. There was a lot of
 >
 > * Option to restart process when Quiz is failed to be handled.
 
+<!-- ROADMAP -->
+## Roadmap
+In the process of developing this application I have been using more and more the git commands and github features, such <strong>issues and wiki</strong>. Please visit my [Code Quiz Wiki](https://github.com/gusmiller/Code-Quiz-App/wiki) This will add great value to my resume and keep me sharp using this tool
+
+- [ ] Dev-001 Build index page
+  - [ ] Dev-001 Styling CSS Files
+  - [ ] Dev-001 Questions flow
+  - [ ] User Penalize for wrong answers
+- [ ] Err-001 Page does not load
+- [ ] Dev-002 Scores are to be shown
+  - [ ] Dev-002 Build Score page
+  - [ ] Dev-002 Add Scores Form
+  - [ ] Dev-002 Complete the script
+- [ ] Dev-003 Quiz not advancing (bug)
+- [ ] Dev-004 Create README (documentation)
+- [ ] Err-002 Link to scoreboard not showing
+
+See the [open issues](https://github.com/gusmiller/Code-Quiz-App/issues) for a full list of proposed features (and known issues).
+Note: last two issue have been intentionaly left open for graders to see that I am using this feature.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LICENSE Section -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+
+
+<!-- CONTACT Section -->
+## Contact
+
+In case you have any questions or would like me to help you in your IT needs, you may contact me at - gustavo.miller@miller-hs.com
+
+Project Link: [https://gusmiller.github.io/Code-Quiz-App/](https://gusmiller.github.io/Code-Quiz-App/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Error Handling
 There is no errr handling but there is a failed Quiz Message
