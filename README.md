@@ -1,5 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
+<a id="readme-top" name="readme-top"></a>
 
 <p align="center">
     <img src="./resource/images/carleton-u-logo.jpg" height="250">
@@ -57,7 +57,7 @@ User will select their choice and application will validate response. Business r
 Here is the layout of the index.html
 <img src="./documents/images/CQC-008.png" height="500">
 
-During this process the JavaScript code keeps track of the time. If time runs out, the user's Quiz will be terminated.
+While in the Questions Section; each time user responds their question it brings next question until last is completed and the <strong>Completed Section</strong> would be displayed. During this process the JavaScript code keeps track of the time. If time runs out, the user's Quiz will be terminated and the <strong>Time-out Section</strong> would be displayed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
