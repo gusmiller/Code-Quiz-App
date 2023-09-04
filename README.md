@@ -35,6 +35,15 @@ The source code is stored and maintained in Github; https://github.com/gusmiller
 ```
 https://gusmiller.github.io/Code-Quiz-App/
 ```
+The code is divided in separate folders:
+
+| Folder Name | Description                                                    |
+|------------:|----------------------------------------------------------------|
+| Main        | This is where the HTML pages are located, license and Readme   |
+|             | are stored.
+| Documents   | Contain a set of images, original mockup and other information |
+| Resource    | Contain different folders to hold CSS, Images and JavaSctipts. |
+
 The latest version is <strong>Version 004</strong>. To visit the application and participate please click <a href="https://gusmiller.github.io/Code-Quiz-App/">Code-Quiz-App</a>
 
 <!-- Business Requirements Section -->
@@ -95,12 +104,10 @@ In the process of developing this application I have been using more and more th
 See the [open issues](https://github.com/gusmiller/Code-Quiz-App/issues) for a full list of proposed features (and known issues).
 Note: last two issue have been intentionaly left open for graders to see that I am using this feature.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LICENSE Section -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 
 
 <!-- CONTACT Section -->
